@@ -1,0 +1,68 @@
+import { Button, VerticalBox, ScrollView } from "std-widgets.slint";
+import { Example } from "test.slint";
+
+export component AppWindow inherits Window {
+    preferred-width: 925px;
+    preferred-height: 500px;
+    min-height: 500px;
+    min-width: 500px;
+    max-height: 1000px;
+    max-width: 1000px;
+    title: "Password Manager";
+    // in-out property <int> counter: 42;
+    // callback request-increase-value();
+    // VerticalBox {
+    //     Text {
+    //         text: "Counter: \{root.counter}";
+    //     }
+
+    //     Button {
+    //         text: "Increase value";
+    //         clicked => {
+    //             root.request-increase-value();
+    //         }
+    //     }
+    // }
+    ScrollView {
+
+        //Header rectangle
+        Rectangle {
+            x: 0;
+            y: 0;
+            background: rgb(59, 59, 84);
+
+            height: 40px;
+            //This line of code will break the whole thing for some reason???
+            //width: 100%;
+    
+            Image {
+                source: @image-url("images/key.png");
+                width: 35px;
+                x: 20px;
+            }
+
+            Text {
+                text: "Password Manager";
+                color: white;
+                horizontal-alignment: right;
+                font-size: 25px;
+                font-weight: 750;
+                x: parent.width - 270px;
+            }
+    
+        }
+
+        property<int> number_of_rows: 4;
+
+        viewport-height: 266px * number_of_rows;
+
+        for item[index] in number_of_rows: GridLayout{
+            padding-top: 250px * index;
+
+            Row {
+                Example {}
+            }
+        }
+
+    }
+}
