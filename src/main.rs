@@ -2,11 +2,12 @@ slint::include_modules!();
 
 fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
+    //let ui_login = Login::new()?;
 
 
     //Working encryption code
     // use simple_crypt::encrypt;
-    // let encrypted_data = encrypt(b"Super secret text", b"USarmy3360!!").expect("Failed to encrypt");
+    // let encrypted_data = encrypt(b"Super secret text", b"any_password").expect("Failed to encrypt");
     // println!("{:?}", encrypted_data);
 
     // This is the result of the encrypt() line above
@@ -20,12 +21,20 @@ fn main() -> Result<(), slint::PlatformError> {
 
     
 
-    // Starter code
+    //Starter code
     // ui.on_request_increase_value({
     //     let ui_handle = ui.as_weak();
     //     move || {
     //         let ui = ui_handle.unwrap();
     //         ui.set_counter(ui.get_counter() + 1);
+    //     }
+    // });
+
+    // ui.on_request_increase_value({
+    //     let ui_handle = ui.as_weak();
+    //     move || {
+    //         let ui = ui_handle.unwrap();
+    //         ui.set(false);
     //     }
     // });
 

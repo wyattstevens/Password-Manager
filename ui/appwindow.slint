@@ -1,5 +1,6 @@
 import { Button, VerticalBox, ScrollView } from "std-widgets.slint";
 import { Example } from "test.slint";
+import { Login } from "login.slint";
 
 export component AppWindow inherits Window {
     preferred-width: 925px;
@@ -10,7 +11,7 @@ export component AppWindow inherits Window {
     max-width: 1000px;
     title: "Password Manager";
 
-    property <bool> logged_in: false;
+    in-out property <bool> logged_in: false;
     // in-out property <int> counter: 42;
     // callback request-increase-value();
     // VerticalBox {
@@ -25,6 +26,18 @@ export component AppWindow inherits Window {
     //         }
     //     }
     // }
+
+    VerticalLayout {
+        alignment: center;
+        HorizontalLayout {
+            alignment: center;
+            Login { 
+        
+                visible: !logged_in;
+            }
+        }
+    }
+
     ScrollView {
 
         //Header rectangle
@@ -52,7 +65,7 @@ export component AppWindow inherits Window {
                 x: parent.width - 270px;
             }
 
-            visible: !logged_in;
+            visible: logged_in;
     
         }
 
@@ -67,6 +80,8 @@ export component AppWindow inherits Window {
                 Example {}
             }
         }
+
+        visible: logged_in;
 
     }
 }

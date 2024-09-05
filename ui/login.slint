@@ -1,29 +1,99 @@
 
-import { VerticalBox } from "std-widgets.slint";
-export component Example inherits Window {
+import { VerticalBox, GridBox, Button } from "std-widgets.slint";
+export component Login inherits Window {
 
-    Rectangle {
-        background: rgb(59, 59, 84);
-        border-width: 2px;
-        border-radius: 10px;
-        drop-shadow-blur: 2px;
-        drop-shadow-color: grey;
-        drop-shadow-offset-x: 1px;
-        drop-shadow-offset-y: 1px;
+    height: 100%;
+    width: 100%;
 
-        height: 175px;
-        width: 300px;
+    in-out property <bool> placeholder_email: false;
+    in-out property <bool> placeholder_password: true;
+    //callback request-increase-value();
 
-        VerticalBox {
-            Text {
-                horizontal-alignment: right;
-                text: "Username";
-            }
-            Text {
-                horizontal-alignment: right;
-                text: "Password";
+    VerticalLayout {
+        alignment: center;
+        HorizontalLayout {
+            alignment: center;
+            Rectangle {
+                background: rgb(59, 59, 84);
+                border-width: 2px;
+                border-radius: 10px;
+                drop-shadow-blur: 2px;
+                drop-shadow-color: grey;
+                drop-shadow-offset-x: 1px;
+                drop-shadow-offset-y: 1px;
+        
+                height: 175px;
+                width: 500px;
+        
+                HorizontalLayout {
+                    alignment: center;
+                    spacing: 10px;
+                    VerticalLayout {
+                        alignment: center;
+                        spacing: 10px;
+
+                        Rectangle {
+
+                            drop-shadow-blur: 2px;
+                            drop-shadow-color: grey;
+                            drop-shadow-offset-x: 1px;
+                            drop-shadow-offset-y: 1px;
+    
+                            background: white;
+                            height: 15%;
+                            width: 75%;
+
+                            if area.pressed : foo := TextInput {
+                                color: black;
+                                horizontal-alignment: center;
+                                vertical-alignment: center;
+                                text: "";
+                                selection-background-color: grey;
+                            }
+                            if !area.pressed : TextInput {
+                                color: black;
+                                horizontal-alignment: center;
+                                vertical-alignment: center;
+                                text: "Email";
+                                selection-background-color: grey; 
+                            }
+                            area := TouchArea {
+                                clicked => {
+                                    //root.request-increase-value();
+                                }
+                            }
+                            
+                        }
+                        
+                        Rectangle {
+    
+                            drop-shadow-blur: 2px;
+                            drop-shadow-color: grey;
+                            drop-shadow-offset-x: 1px;
+                            drop-shadow-offset-y: 1px;
+    
+                            background: white;
+                            height: 15%;
+                            width: 75%;
+                            TextInput {
+                                color: black;
+                                horizontal-alignment: center;
+                                vertical-alignment: center;
+                                text: "Password";
+                                selection-background-color: grey;
+                            }
+                        }
+
+                        Button {
+    
+                            height: 25%;
+                            width: 75%;
+
+                            text: "Submit";
+                        }
+                    }
+                }
             }
         }
     }
-    
 }
