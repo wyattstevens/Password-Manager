@@ -1,0 +1,29 @@
+
+import { VerticalBox } from "std-widgets.slint";
+export component Example inherits Window {
+
+    Rectangle {
+        background: rgb(59, 59, 84);
+        border-width: 2px;
+        border-radius: 10px;
+        drop-shadow-blur: 2px;
+        drop-shadow-color: grey;
+        drop-shadow-offset-x: 1px;
+        drop-shadow-offset-y: 1px;
+
+        height: 175px;
+        width: 300px;
+
+        VerticalBox {
+            Text {
+                horizontal-alignment: right;
+                text: "Username";
+            }
+            Text {
+                horizontal-alignment: right;
+                text: "Password";
+            }
+        }
+    }
+    
+}

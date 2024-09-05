@@ -9,6 +9,8 @@ export component AppWindow inherits Window {
     max-height: 1000px;
     max-width: 1000px;
     title: "Password Manager";
+
+    property <bool> logged_in: false;
     // in-out property <int> counter: 42;
     // callback request-increase-value();
     // VerticalBox {
@@ -49,6 +51,8 @@ export component AppWindow inherits Window {
                 font-weight: 750;
                 x: parent.width - 270px;
             }
+
+            visible: !logged_in;
     
         }
 
