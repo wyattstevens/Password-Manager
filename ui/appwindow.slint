@@ -12,21 +12,8 @@ export component AppWindow inherits Window {
     title: "Password Manager";
 
     in-out property <bool> logged_in: false;
-    // in-out property <int> counter: 42;
-    // callback request-increase-value();
-    // VerticalBox {
-    //     Text {
-    //         text: "Counter: \{root.counter}";
-    //     }
-
-    //     Button {
-    //         text: "Increase value";
-    //         clicked => {
-    //             root.request-increase-value();
-    //         }
-    //     }
-    // }
-
+    
+    //If not logged in.
     VerticalLayout {
         alignment: center;
         HorizontalLayout {
@@ -38,6 +25,7 @@ export component AppWindow inherits Window {
         }
     }
 
+    //If logged in.
     ScrollView {
 
         //Header rectangle

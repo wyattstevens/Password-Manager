@@ -7,7 +7,7 @@ export component Login inherits Window {
 
     in-out property <bool> placeholder_email: false;
     in-out property <bool> placeholder_password: true;
-    //callback request-increase-value();
+    callback request-toggle-placeholder-email(bool);
 
     VerticalLayout {
         alignment: center;
@@ -43,25 +43,38 @@ export component Login inherits Window {
                             height: 15%;
                             width: 75%;
 
-                            if area.pressed : foo := TextInput {
-                                color: black;
-                                horizontal-alignment: center;
-                                vertical-alignment: center;
-                                text: "";
-                                selection-background-color: grey;
-                            }
-                            if !area.pressed : TextInput {
+                            TextInput {
                                 color: black;
                                 horizontal-alignment: center;
                                 vertical-alignment: center;
                                 text: "Email";
-                                selection-background-color: grey; 
+                                selection-background-color: grey;
                             }
-                            area := TouchArea {
-                                clicked => {
-                                    //root.request-increase-value();
-                                }
-                            }
+
+                            ////
+                            //  Trying to get placeholder text to work properly in my login form
+                            ////
+                            // if (area.pressed && placeholder_email) : foo := TextInput {
+                            //     color: black;
+                            //     horizontal-alignment: center;
+                            //     vertical-alignment: center;
+                            //     text: "";
+                            //     selection-background-color: grey;
+                            // }
+                            // if !area.pressed : TextInput {
+                            //     color: black;
+                            //     horizontal-alignment: center;
+                            //     vertical-alignment: center;
+                            //     text: "Email";
+                            //     selection-background-color: grey; 
+                            // }
+                            // area := TouchArea {
+                            //     clicked => {
+                            //         root.request-toggle-placeholder-email(false);
+                            //     }
+                            // }
+
+                            
                             
                         }
                         

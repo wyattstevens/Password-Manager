@@ -2,7 +2,8 @@ slint::include_modules!();
 
 fn main() -> Result<(), slint::PlatformError> {
     let ui = AppWindow::new()?;
-    //let ui_login = Login::new()?;
+
+    
 
 
     //Working encryption code
@@ -17,26 +18,7 @@ fn main() -> Result<(), slint::PlatformError> {
     // let data = decrypt(&encrypted_data, b"USarmy3360!!").expect("Failed to decrypt");
     // let text = String::from_utf8_lossy(&data);
     // println!("{}", text);
-
-
     
-
-    //Starter code
-    // ui.on_request_increase_value({
-    //     let ui_handle = ui.as_weak();
-    //     move || {
-    //         let ui = ui_handle.unwrap();
-    //         ui.set_counter(ui.get_counter() + 1);
-    //     }
-    // });
-
-    // ui.on_request_increase_value({
-    //     let ui_handle = ui.as_weak();
-    //     move || {
-    //         let ui = ui_handle.unwrap();
-    //         ui.set(false);
-    //     }
-    // });
 
     ui.run()
 }
